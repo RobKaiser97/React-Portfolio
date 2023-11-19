@@ -1,88 +1,77 @@
-import { useState } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import validateEmail from "../utils/validation";
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+const Contact = () => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+    // Get the values from the form
+    const name = event.target.elements.name.value;
+    const email = event.target.elements.email.value;
+    const message = event.target.elements.message.value;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:kaiserrobert1997@gmail.com?subject=${encodeURIComponent(
-      `Message from ${formData.name}`
-    )}&body=${encodeURIComponent(
-      `${formData.message}\n\nFrom: ${formData.name} <${formData.email}>`
-    )}`;
+    // Validate email
+    if (!validateEmail(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
 
-    // Create a temporary anchor tag and click it
-    const tempLink = document.createElement("a");
-    tempLink.href = mailtoLink;
-    tempLink.style.display = "none";
-    document.body.appendChild(tempLink);
-    tempLink.click();
-    document.body.removeChild(tempLink);
+    // Recipient's email address
+    const recipientEmail = "kaiserrobert1997@gmail.com";
+
+    // Generate the mailto link with recipient's email, sender's email, subject, and body
+    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+      `Message from ${name}`
+    )}&body=${encodeURIComponent(`${message}\n\nSender's Email: ${email}`)}`;
+
+    // Open the user's email client with the pre-filled email
+    window.open(mailtoLink);
   };
 
   return (
-    <Container className="mt-5">
-      <Row className="justify-content-md-center">
-        <Col md={6}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter your email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Your message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Send Message
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <div className="container mt-5 contact-container">
+      <h1 className="mb-4 text-center">Contact Me</h1>
+      <form onSubmit={handleFormSubmit}>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            Name:
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email:
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="message" className="form-label">
+            Message:
+          </label>
+          <textarea
+            className="form-control"
+            id="message"
+            placeholder="Your Message"
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Send
+        </button>
+      </form>
+    </div>
   );
 };
 
-export default ContactForm;
+export default Contact;

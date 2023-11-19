@@ -12,12 +12,26 @@ function About() {
         </Col>
         <Col md="auto">
           <p>
-            Detail-oriented Avionics Technician with experience in back-end and
-            front-end web development, demonstrating a unique blend of technical
-            skills in both avionics and software development. Proven track
-            record in avionics testing and repair, combined with a passion for
-            coding and web technologies. Adept at problem-solving, team
-            collaboration, and continuous learning in fast-paced environments.
+            I&apos;m Robert Kaiser, hailing from New Jersey. My professional
+            journey encompasses a dynamic blend of technical expertise and
+            leadership skills, honed over six years in the United States Marine
+            Corps, where I excelled as an Avionics Repair Technician and a small
+            unit leader. My career in the Marines not only sharpened my
+            technical acumen in avionics testing and repair but also instilled
+            in me a strong sense of discipline and team collaboration. Fueling
+            my technical journey is a deep-rooted passion for web design and
+            coding. Currently, I am actively expanding my knowledge and
+            experience in both front-end and back-end web development. My
+            approach is detail-oriented, combining the precision I practiced in
+            avionics with the creativity and problem-solving skills essential in
+            software development. Away from work, I serve as a volunteer
+            firefighter, a role that reflects my commitment to community
+            service. My personal interests include hiking, indulging in video
+            games, and enjoying winter sports like skiing and snowboarding. This
+            diverse array of activities complements my professional life, as
+            each pursuit hones different facets of my character – from teamwork
+            and resilience to strategic thinking and continuous learning in
+            fast-paced environments.
           </p>
         </Col>
       </Row>

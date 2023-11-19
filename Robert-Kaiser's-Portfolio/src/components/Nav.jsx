@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Navbar, Nav as BootstrapNav, Container } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "../styles/Nav.css";
 
 function Nav({ setCurrentPage }) {
   const [expanded, setExpanded] = useState(false);
@@ -12,73 +14,78 @@ function Nav({ setCurrentPage }) {
   };
 
   return (
-    <Navbar
-      expanded={expanded}
-      onToggle={() => setExpanded(!expanded)}
-      expand="lg"
-      bg="light"
-      fixed="top"
-    >
-      <Container>
-        <Navbar.Brand href="/">
-          <img
-            src="/path-to-your-icon.png"
-            alt="icon"
-            style={{ marginRight: "10px" }}
-          />
-          My Name
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <BootstrapNav className="ms-auto">
-            <BootstrapNav.Link
-              as={Link}
-              to="/"
-              active={isActive("/")}
-              onClick={() => {
-                setCurrentPage("/");
-                setExpanded(false);
-              }}
-            >
-              About
-            </BootstrapNav.Link>
-            <BootstrapNav.Link
-              as={Link}
-              to="/projects"
-              active={isActive("/projects")}
-              onClick={() => {
-                setCurrentPage("/");
-                setExpanded(false);
-              }}
-            >
-              Projects
-            </BootstrapNav.Link>
-            <BootstrapNav.Link
-              as={Link}
-              to="/contact"
-              active={isActive("/contact")}
-              onClick={() => {
-                setCurrentPage("/");
-                setExpanded(false);
-              }}
-            >
-              Contact
-            </BootstrapNav.Link>
-            <BootstrapNav.Link
-              as={Link}
-              to="/resume"
-              active={isActive("/resume")}
-              onClick={() => {
-                setCurrentPage("/");
-                setExpanded(false);
-              }}
-            >
-              Resume
-            </BootstrapNav.Link>
-          </BootstrapNav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="custom-navbar">
+      <div className="custom-container">
+        <a className="navbar-brand" href="/">
+          Robert Kaiser
+        </a>
+        <button
+          className="navbar-toggle"
+          onClick={() => setExpanded(!expanded)}
+        >
+          <FontAwesomeIcon icon={faBars} /> {/* Hamburger icon */}
+        </button>
+        <div
+          className={`navbar-collapse ${expanded ? "show" : ""}`}
+          id="basic-navbar-nav"
+        >
+          <ul className="navbar-nav ms-auto">
+            {/* About Link */}
+            <li className="nav-item">
+              <Link
+                to="/"
+                className={`nav-link ${isActive("/") ? "active" : ""}`}
+                onClick={() => {
+                  setCurrentPage("/");
+                  setExpanded(false);
+                }}
+              >
+                About
+              </Link>
+            </li>
+            {/* Projects Link */}
+            <li className="nav-item">
+              <Link
+                to="/projects"
+                className={`nav-link ${isActive("/projects") ? "active" : ""}`}
+                onClick={() => {
+                  setCurrentPage("/projects");
+                  setExpanded(false);
+                }}
+              >
+                Projects
+              </Link>
+            </li>
+            {/* Contact Link */}
+            <li className="nav-item">
+              <Link
+                to="/contact"
+                className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+                onClick={() => {
+                  setCurrentPage("/contact");
+                  setExpanded(false);
+                }}
+              >
+                Contact
+              </Link>
+            </li>
+            {/* Resume Link */}
+            <li className="nav-item">
+              <Link
+                to="/resume"
+                className={`nav-link ${isActive("/resume") ? "active" : ""}`}
+                onClick={() => {
+                  setCurrentPage("/resume");
+                  setExpanded(false);
+                }}
+              >
+                Resume
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
 

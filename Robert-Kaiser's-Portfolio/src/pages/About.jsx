@@ -1,23 +1,23 @@
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "../styles/About.css";
+import portrait from "../assets/portrait.jpg";
 
 function About() {
   return (
     <Container className="pt-5">
       <Row className="justify-content-md-center">
-        <Col xs lg="2">
+        <Col className="justify-content-center d-flex">
           {/* TODO */}
-          <Image src="path_to_your_image.jpg" rounded />
+          <img src={portrait} id="photo" />
         </Col>
         <Col md="auto">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Detail-oriented Avionics Technician with experience in back-end and
+            front-end web development, demonstrating a unique blend of technical
+            skills in both avionics and software development. Proven track
+            record in avionics testing and repair, combined with a passion for
+            coding and web technologies. Adept at problem-solving, team
+            collaboration, and continuous learning in fast-paced environments.
           </p>
         </Col>
       </Row>

@@ -7,7 +7,9 @@ function Projects() {
     <Container fluid>
       <Row>
         <Col>
-          <h1 className="text-center">Projects</h1>
+          <h1 className="text-center" style={{ color: "#6290C3" }}>
+            Projects
+          </h1>
         </Col>
       </Row>
       <Row>

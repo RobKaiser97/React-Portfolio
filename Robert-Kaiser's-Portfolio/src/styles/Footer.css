@@ -1,0 +1,32 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0px;
+  background-color: #1A1B41;
+  /* margin-top: auto; */
+}
+
+.footer .footerText {
+  color: #C2E7DA;
+}
+
+#gHLogo {
+  color: #F1FFE7;
+}
+
+#fBLogo {
+  color: #0866ff;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 60%;
+}
+
+#lILogo {
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15%;
+}
+

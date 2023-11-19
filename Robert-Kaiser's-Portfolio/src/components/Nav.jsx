@@ -1,55 +1,88 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Navbar, Nav as BootstrapNav, Container } from "react-bootstrap";
 
-function Nav({ currentPage, setCurrentPage }) {
+function Nav({ setCurrentPage }) {
+  const [expanded, setExpanded] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
-    <ul className="navbar-nav">
-      <li className="nav-item">
-        <Link
-          to="/"
-          className={currentPage === "/" ? "nav-link active" : "nav-link"}
-          onClick={() => setCurrentPage("/")}
-        >
-          About
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/projects"
-          className={
-            currentPage === "/projects" ? "nav-link active" : "nav-link"
-          }
-          onClick={() => setCurrentPage("/projects")}
-        >
-          Projects
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/contact"
-          className={
-            currentPage === "/contact" ? "nav-link active" : "nav-link"
-          }
-          onClick={() => setCurrentPage("/contact")}
-        >
-          Contact
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/resume"
-          className={currentPage === "/resume" ? "nav-link active" : "nav-link"}
-          onClick={() => setCurrentPage("/resume")}
-        >
-          Resume
-        </Link>
-      </li>
-    </ul>
+    <Navbar
+      expanded={expanded}
+      onToggle={() => setExpanded(!expanded)}
+      expand="lg"
+      bg="light"
+      fixed="top"
+    >
+      <Container>
+        <Navbar.Brand href="/">
+          <img
+            src="/path-to-your-icon.png"
+            alt="icon"
+            style={{ marginRight: "10px" }}
+          />
+          My Name
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <BootstrapNav className="ms-auto">
+            <BootstrapNav.Link
+              as={Link}
+              to="/"
+              active={isActive("/")}
+              onClick={() => {
+                setCurrentPage("/");
+                setExpanded(false);
+              }}
+            >
+              About
+            </BootstrapNav.Link>
+            <BootstrapNav.Link
+              as={Link}
+              to="/projects"
+              active={isActive("/projects")}
+              onClick={() => {
+                setCurrentPage("/");
+                setExpanded(false);
+              }}
+            >
+              Projects
+            </BootstrapNav.Link>
+            <BootstrapNav.Link
+              as={Link}
+              to="/contact"
+              active={isActive("/contact")}
+              onClick={() => {
+                setCurrentPage("/");
+                setExpanded(false);
+              }}
+            >
+              Contact
+            </BootstrapNav.Link>
+            <BootstrapNav.Link
+              as={Link}
+              to="/resume"
+              active={isActive("/resume")}
+              onClick={() => {
+                setCurrentPage("/");
+                setExpanded(false);
+              }}
+            >
+              Resume
+            </BootstrapNav.Link>
+          </BootstrapNav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
 Nav.propTypes = {
-  currentPage: PropTypes.string.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
 };
 

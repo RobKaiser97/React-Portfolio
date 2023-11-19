@@ -1,5 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
+import "../styles/Project.css";
 
 const Project = ({ title, description, image, link, gitRepo }) => {
   return (

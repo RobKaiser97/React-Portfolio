@@ -6,13 +6,14 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { Container } from "react-bootstrap";
+import "../styles/Footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
       <Container>
         <div className="text-center">
-          <span className="text-muted">Robert Kaiser&apos;s Links</span>
+          <span className="footerText">Robert Kaiser&apos;s Links</span>
           <div className="mt-3">
             <a
               href="https://github.com/RobKaiser97"
@@ -20,7 +21,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="mx-2"
             >
-              <FontAwesomeIcon icon={faGithub} size="2x" />
+              <FontAwesomeIcon id="gHLogo" icon={faGithub} size="2x" />
             </a>
             <a
               href="https://linkedin.com/in/robert-kaiser1"
@@ -28,7 +29,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="mx-2"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              <FontAwesomeIcon id="lILogo" icon={faLinkedin} size="2x" />
             </a>
             <a
               href="https://facebook.com/RobertScottKaiserJR"
@@ -36,7 +37,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="mx-2"
             >
-              <FontAwesomeIcon icon={faFacebook} size="2x" />
+              <FontAwesomeIcon id="fBLogo" icon={faFacebook} size="2x" />
             </a>
           </div>
         </div>

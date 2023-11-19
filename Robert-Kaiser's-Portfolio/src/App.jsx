@@ -8,9 +8,16 @@ function App() {
     <>
       <Header className="App-header" />
       <main className="App-main">
-        <Outlet />
+        <div className="content">
+          <Outlet />
+        </div>
       </main>
-      <Footer className="App-footer" />
+      <Footer
+        className="App-footer"
+        github="https://github.com/RobKaiser97"
+        linkedin="https://linkedin.com/in/robert-kaiser1"
+        facebook="https://facebook.com/RobertScottKaiserJR"
+      />
     </>
   );
 }

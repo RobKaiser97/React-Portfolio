@@ -1,8 +1,9 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
+import "../styles/About.css";
 
 function About() {
   return (
-    <Container>
+    <Container className="pt-5">
       <Row className="justify-content-md-center">
         <Col xs lg="2">
           {/* TODO */}

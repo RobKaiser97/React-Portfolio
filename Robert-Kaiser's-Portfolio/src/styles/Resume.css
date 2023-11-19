@@ -1,0 +1,52 @@
+/* Resume component styles */
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.category-container,
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.category-icon,
+.skill-icon {
+  border-radius: 50%;
+  background: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 0.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.category-text,
+.skill-text {
+  text-align: center;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease, visibility 2s ease;
+}
+
+.category-container:hover .category-icon {
+  background-color: #e0e0e0;
+}
+
+.category-container:hover .skills-list {
+  opacity: 1;
+  visibility: visible;
+}

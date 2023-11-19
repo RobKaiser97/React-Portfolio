@@ -1,0 +1,9 @@
+.card {
+  height: 300px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+  height: auto; /* Expand to fit content on hover */
+}

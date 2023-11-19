@@ -1,0 +1,15 @@
+.App-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  padding-top: 60px; /* Adjust this to the height of your header */
+}
+
+.App-main > * {
+  flex-shrink: 0; /* Prevent shrinking of children */
+}
+
+.App-main > .content {
+  flex-grow: 1; /* Allow the content to grow and take available space */
+  padding-bottom: 60px; /* Adjust this to the height of your footer */
+}

@@ -1,9 +1,49 @@
+/* Project.css */
 .card {
-  height: 300px; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow content */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  margin-bottom: 1rem; /* Spacing between cards */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-color: #6290C3; /* Silver Lake Blue border */
 }
 
-.card:hover {
-  height: auto; /* Expand to fit content on hover */
+.card-title, .card-text {
+  color: #6290C3; /* Lime color for title */
 }
+
+.card-footer {
+  background-color: #6290C3 ; /* Honeydew background */
+  border-top-color: #1A1B41; /* Silver Lake Blue border */
+}
+
+.btn-primary {
+  background-color: #1A1B41; /* Space Cadet border color */
+}
+/* Centering the button inside the card body */
+.card-body {
+  text-align: center; /* Center align the content within card body */
+}
+
+/* Additional styling for the View Project button */
+.btn-primary {
+  color: #F1FFE7; /* Honeydew color for text */
+  margin-top: 1rem; /* Space above the button */
+  display: block; /* Make the button a block element to allow for margin auto */
+  width: auto; /* Set the width as per content */
+  margin-left: auto; /* Auto margin for horizontal centering */
+  margin-right: auto; /* Auto margin for horizontal centering */
+}
+
+.btn-secondary {
+  background-color: #1A1B41; /* Mint Green for secondary button */
+  border-color: #6290C3; /* Lime border color */
+}
+
+/* Centering buttons in the footer */
+.card-footer {
+  text-align: center; /* Center align the footer content */
+}
+
+/* Adjusting padding or margins as needed */
+.card-body, .card-footer {
+  padding: 1rem; /* Standard padding */
+}
+

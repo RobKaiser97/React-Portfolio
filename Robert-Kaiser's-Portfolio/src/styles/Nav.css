@@ -1,0 +1,94 @@
+.custom-navbar {
+  width: 100%;
+  padding: 10px 10px; /* Same padding as footer */
+  background-color: #1A1B41; /* Same background color as footer */
+  color: #C2E7DA; /* Same text color as footer */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-container {
+  width: 90%; /* Adjust as needed */
+  margin: auto; /* Center the container */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.navbar-brand {
+  color: #C2E7DA;
+  text-decoration: none;
+  font-size: 1.5em; /* Adjust as needed */
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  color: #C2E7DA; /* Adjust color as needed */
+  font-size: 1.5em; /* Adjust size as needed */
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.navbar-nav {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Aligns items in a row */
+  flex-direction: row!important;
+  justify-content: flex-end; /* Aligns nav items to the right */
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 20px; /* Spacing between nav items */
+}
+
+.nav-link {
+  color: #C2E7DA; /* Same link color as footer text */
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition for hover and active effects */
+}
+
+.nav-link:hover, .nav-link:active, .nav-link.active {
+  color: #F1FFE7; /* Different color on hover and active */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .custom-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show toggle button on small screens */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Stack the nav items vertically */
+    align-items: flex-start; /* Align nav items to the start */
+    display: none; /* Initially hidden on small screens */
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Space below the header */
+  }
+
+  .navbar-nav.show {
+    display: flex; /* Show nav items when expanded */
+  }
+
+  .nav-item {
+    margin: 10px 0; /* Adjust vertical spacing */
+  }
+
+  .navbar-collapse {
+    display: none; /* Initially hide the menu */
+  }
+
+  .navbar-collapse.show {
+    display: block; /* Show menu when toggled */
+  }
+}
+
+/* Additional custom styles as needed */

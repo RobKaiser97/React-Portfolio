@@ -1,0 +1,10 @@
+#photo {
+    width: 18rem;
+    height: 18rem;
+    margin: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #fff;
+}

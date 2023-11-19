@@ -1,7 +1,7 @@
 .App-main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 89.25vh; /* Full viewport height */
   padding-top: 60px; /* Adjust this to the height of your header */
 }
 

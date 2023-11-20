@@ -23,11 +23,11 @@
 - **Contact:** Provides a contact form with necessary validations for required fields and email formats.
 - **Resume:** Offers a downloadable resume link and details my web development proficiencies.
 - **Footer:** Contains text and icon links to my GitHub, Facebook, and LinkedIn profiles.
-- **Deployment:** The application is hosted on Netlify and can be accessed at *https://robertkaiser.netlify.app/projects*.
+- **Deployment:** The application is hosted on Netlify and can be accessed at *https://robertkaiser.netlify.app*.
 
 ## Deployed Application
 
-Explore my React portfolio by clicking the lightning bolt [⚡](https://robertkaiser.netlify.app/projects).
+Explore my React portfolio by clicking the lightning bolt [⚡](https://robertkaiser.netlify.app).
 
 ## License
 
